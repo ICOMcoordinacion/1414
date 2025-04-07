@@ -51,7 +51,7 @@ st.checkbox("💼 Caja", key="activar_caja")
 if st.session_state.activar_caja:
     monto_caja = st.number_input("Monto inicial de caja", min_value=0.0, format="%.2f", key="monto_caja", step=500.0)
     if not st.session_state.caja_registrada and monto_caja > 0:
-        st.session_state.movimientos.append({
+        st.session_state.movimientos.concat({
             "tipo": "Ingreso",
             "concepto": "Caja inicial",
             "monto": monto_caja,
